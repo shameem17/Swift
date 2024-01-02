@@ -1,6 +1,5 @@
 //swift string
 
-
 //declare a string
 print("----------String Variable-------------")
 //1. with explicit type
@@ -10,7 +9,19 @@ let firstName: String = "Shameem"
 let lastName = "Ahammed"
 
 //print string
-print(firstName)
+print("firstName=",firstName)
+print("lastName=",lastName)
+
+//puncuations, emoji and other characters can also be used
+let fileName = "MyPhoto.png"
+let ratings = "⭐️⭐️⭐️"
+print("fileName= \(fileName)")
+print("Rating=",ratings)
+
+//using quotes
+
+let quote = "He says, \"I am ill\"."
+
 
 //concatenating string
 //1.
@@ -215,3 +226,16 @@ for codeUnit in name.utf8{
     print(codeUnit)
 }
 
+//string other functions
+print("-----length of string---------")
+//1. Length
+let sentence = "Swift is fun"
+let numberofChar = sentence.count
+
+print("\(sentence) contains \(numberofChar) letters(with Space).")
+
+print("-------Upper case/Lower Case-------")
+//2. Upper case
+print("UpperCased =",sentence.uppercased())
+//3. Lower case
+print("Lower Case =", sentence.lowercased())
