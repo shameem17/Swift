@@ -74,6 +74,7 @@ enum Letter: Character{
 
 var aLetter = Letter.a
 print("aLetter = \(aLetter)")
+print("aLetter RawValue = \(aLetter.rawValue)")
 
 //find keys
 if let letter = Letter(rawValue: "C"){
@@ -124,3 +125,11 @@ let product = Arithmatic.multiply(sum, num3)
 
 let result = calculate(expression: product)
 print("result = \(result)")
+
+enum Ingredient: String {
+    case lettuce = "Romain Lettuce"
+    case croutons = "Salted Croutons"
+    case chicken = "Free Range Chicken"
+}
+
+print("This is the ingredient enumeration value: \(Ingredient.lettuce)")
