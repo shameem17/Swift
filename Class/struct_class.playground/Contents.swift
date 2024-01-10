@@ -167,3 +167,120 @@ class Location{
 
 var location = Location(locId: 894)
 location.locId = 45 //didSet triggered
+
+
+//access modifier
+
+//5 access modifiers:-
+// 1. pulbic : - Allows source files from other modules to access the code, however, other modules can’t subclass and override classes.
+// 2. private : - Allow the code within a code definition to access the code
+// 3. fileprivate :- allow the defining source file to access the code
+// 4. internal :- allow source files from the defining module to acess the code
+// 5. open :- allow source files from other modules to access the code. other modules can subclass and override classes
+
+
+class BaseClass{
+    var name: String
+    var id: Int
+    init(name: String, id: Int) {
+        self.name = name
+        self.id = id
+    }
+    internal func displayInfo(){
+        print("Class = \(name) and classId = \(id)")
+    }
+}
+
+class DerivedClass: BaseClass{
+    
+}
+
+var derived  = DerivedClass(name: "Derived Class", id: 20)
+derived.displayInfo()
+
+
+//Type Casting
+
+//identify and ensure instance type
+// type check operators:
+// 1. is- checks whether an instance is of a certain subclass type
+// 2. as- cast an instance as a different type
+print("--------")
+class Customer{
+    var id: Int
+    init(id:Int){
+        self.id = id
+    }
+}
+
+class AllergyCustomer: Customer{
+    let dishesToAvoid = [
+        "Dish 4",
+        "Dish 9"
+    ]
+    func emergencyCall(){
+        print("call 999!")
+    }
+}
+
+var customers: [Customer] = []
+
+for _ in 0..<5{
+    let randomNumber = Int.random(in: 1...100)
+    let customer: Customer
+    if randomNumber%2 == 0{
+        customer = Customer(id: randomNumber)
+    }
+    else{
+        customer = AllergyCustomer(id: randomNumber)
+    }
+    customers.append(customer)
+}
+
+for customer in customers{
+    print("Customer id = \(customer.id)")
+    if customer is AllergyCustomer{
+        print("Welcome. Some food contains Allergy ingredients!")
+    }else{
+        print("Welcome")
+    }
+    
+    //casting
+    if let allergyCustomer = customer as? AllergyCustomer{
+        print("Dises to avoid:")
+        allergyCustomer.dishesToAvoid
+        print("Emmergency Call:")
+        allergyCustomer.emergencyCall()
+    }
+}
+
+//polymorphism
+//derived class property acts differently
+
+//overriding
+
+class A{
+    fileprivate let id: Int
+    var x: String{
+        "A class"
+    }
+    init(id: Int){
+        self.id = id
+    }
+    func display(){
+        print(id)
+    }
+
+}
+class B: A{
+    override var x: String{
+        "B class"
+    }
+    override func display(){
+        super.display()
+    }
+}
+
+var b = B(id: 67)
+b.display()
+print(b.id)
