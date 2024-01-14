@@ -66,7 +66,7 @@ func greetPerson(with name: String) -> Void{  //name: parameter, with: argument 
 
 //function call using argument label
 greetPerson(with: "Alice")
-
+//greetPerson(name: "Bob")
 //no argument label
 func getArea(_ length: Int, _ width: Int) -> Void{
     print("The area is \(length*width)")
@@ -184,12 +184,12 @@ print("Result of \(sign) function = \(getFunc(10,4))")
 
 //nested function
 //function inside a function
-
 func function1(num1: Int){
-    func function2(num: Int){
-        print("Printing \(num) inside func2")
+    func function2(){
+        print("Printing \(num1) inside func2")
     }
-    function2(num: num1)
+    function2()
 }
 
 function1(num1: 20)
+//function2()
