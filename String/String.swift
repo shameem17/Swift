@@ -1,4 +1,5 @@
 //swift string
+import UIKit
 
 //declare a string
 print("----------String Variable-------------")
@@ -86,6 +87,21 @@ var arrayChar: [Character] = ["a", "b", "c"]
 
 print(arrayChar)
 
+//string to character array
+//1.
+
+var tempString = "This is a String"
+let charArray = Array(tempString)
+print("the character array is=\(charArray)")
+
+//2.
+let chars = [Character](tempString)
+print("chars= \(chars)")
+
+//append in string (concatanating)
+tempString += " new adding"
+print("tempString = \(tempString)")
+
 //append new element to array
 print("----------character array append-------------")
 arrayChar.append("d") //don't forget to declare the array as var, not let to avoid error
@@ -132,7 +148,7 @@ print("offset=",name[offsetIndex]) //m(4th element)
 print("-----------Interate Using Index-----------")
 
 for id in name.indices{
-    print(name[id])
+    print("id=\(id) ",name[id])
 }
 
 
@@ -239,3 +255,21 @@ print("-------Upper case/Lower Case-------")
 print("UpperCased =",sentence.uppercased())
 //3. Lower case
 print("Lower Case =", sentence.lowercased())
+
+//append character
+let ch: Character = "Z"
+tempString += String(ch)
+print(tempString)
+
+//are the starting index of two string same?
+
+let str1 = "Hello world"
+let str2 = "Welcome to "
+let s1 = str1.startIndex
+let s2 = str2.startIndex
+
+print("str1=\(s1), str2=\(s2)") //yes the raw bits are same
+print(name.startIndex)
+
+//is the end index same? if strings are same length?
+print("\(str1.endIndex), \(str2.endIndex)") //yes
