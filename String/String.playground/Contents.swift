@@ -27,7 +27,7 @@ let quote = "He says, \"I am ill\"."
 //concatenating string
 //1.
 print("----------Concatenating-----------")
-let name = firstName + " " + lastName
+var name = firstName + " " + lastName
 print(name)
 
 //2.
@@ -273,3 +273,39 @@ print(name.startIndex)
 
 //is the end index same? if strings are same length?
 print("\(str1.endIndex), \(str2.endIndex)") //yes
+
+
+//MARK: - practice
+
+var myString = "swift is fun"
+
+let startIdx = name.startIndex
+let endIdx = name.endIndex
+let afterIdx = name.index(after: startIdx)
+let beforeIdx = name.index(before: endIdx)
+let anyIdx = name.index(startIdx, offsetBy: 4)
+let range2 = name.startIndex..<name.index(startIdx, offsetBy: 7)
+name.replaceSubrange(range2, with: "shamim")
+name.capitalized
+print(name)
+//iteration over the string
+for index in myString.indices {
+    let character = myString[index]
+    print(character)
+}
+
+for char in name{
+    print(char)
+}
+
+myString.forEach { char in
+    print(char)
+}
+
+
+//substring
+
+let findIndex = myString.firstIndex(of: " ") ?? myString.endIndex
+
+let subString = myString[..<findIndex]
+print(subString)

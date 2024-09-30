@@ -193,3 +193,44 @@ func function1(num1: Int){
 
 function1(num1: 20)
 //function2()
+
+
+func overLoadingFunc(msg: String) -> Void{
+    print("the message is:\(msg)")
+}
+
+func overLoadingFunc(msg: Int) -> Void{
+    print("the number is:\(msg)")
+}
+
+overLoadingFunc(msg: "shameem")
+overLoadingFunc(msg: 34)
+
+
+//property wrapper
+
+struct API{
+   @CutSpace var url: String
+}
+
+var api = API(url: "http://wwww.google.com/ ")
+
+@propertyWrapper
+struct CutSpace{
+    var string: String
+    
+    init(wrappedValue: String){
+        self.string = wrappedValue
+    }
+    
+    var wrappedValue: String{
+        get{
+            return string.trimmingCharacters(in: .whitespacesAndNewlines)
+        }set{
+            string = newValue
+        }
+    }
+}
+
+let newUrl = URL(string: api.url)
+print(newUrl)

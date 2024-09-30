@@ -42,7 +42,7 @@ print("Empty check. Is empty?",sports.isEmpty)
 //iteration
 print("-------iteration----")
 
-for sport in sports.sorted(){
+for sport in sports{
     print("sprot=",sport)
 }
 
@@ -107,3 +107,20 @@ if subSet == oddNumbers{
 }
 
 print(subSet.isEmpty)
+
+
+struct MyObj: Hashable{
+    var id: Int
+    var amount: Double
+}
+
+let set1: Set<MyObj> = [MyObj(id: 1, amount: 10.0), MyObj(id: 2, amount: 20.0), MyObj(id: 3, amount: 30.0)]
+let set2: Set<MyObj> = [MyObj(id: 2, amount: 209.0), MyObj(id: 30, amount: 40.0), MyObj(id: 4, amount: 50.0)]
+
+// Extract the IDs from set2
+let set2IDs = Set(set2.map { $0.id })
+
+// Filter set1 to include only objects whose IDs are not present in set2
+let subtraction = set1.filter { !set2IDs.contains($0.id) }
+
+print(subtraction)

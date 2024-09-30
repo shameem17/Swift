@@ -84,13 +84,13 @@ if let letter = Letter(rawValue: "C"){
 
 //implicit raw values
 enum Order: Int{
-    case one = 5
-    case two
+    case one
+    case two = 5
     case three
     case four
 }
 
-let anOrder = Order.four
+let anOrder = Order.one
 print("anOrder = \(anOrder)")
 //raw value
 print("anOrder = \(anOrder.rawValue)") //starts with 0 or specified value

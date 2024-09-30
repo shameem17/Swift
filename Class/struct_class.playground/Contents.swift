@@ -283,4 +283,4 @@ class B: A{
 
 var b = B(id: 67)
 b.display()
-print(b.id)
+print(b.x)

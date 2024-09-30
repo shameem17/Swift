@@ -7,7 +7,7 @@ let isStudent = true
 print(isActive)
 print(isStudent)
 
-//var isAuthenticated = 1 //not a boolean type
+var isAuthenticated = 1 //not a boolean type
 //Int type variable
 
 
@@ -29,3 +29,4 @@ isMultiple = !isMultiple
 print("isMultiple= \(isMultiple)")
 isMultiple.toggle()
 print("isMultiple= \(isMultiple)")
+

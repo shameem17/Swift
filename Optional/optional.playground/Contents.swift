@@ -77,3 +77,30 @@ print(noNumber)
 
 var country: String?
 print(country)
+
+
+protocol MyProtocol{
+    var name: String {get}
+    var age: Int {get set}
+    func display()
+}
+
+class Shameem: MyProtocol{
+    var name: String
+    
+    var age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+    func display() {
+        print("My name is \(name) and age \(age)")
+    }
+    
+}
+
+var shameem = Shameem(name: "Shameem", age: 34)
+shameem.display()
+shameem.name = "ahammed"
+shameem.display()
